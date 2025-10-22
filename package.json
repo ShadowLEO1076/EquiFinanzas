@@ -1,0 +1,35 @@
+{
+  "name": "hx-equifin",
+  "version": "1.0.0",
+  "description": "programa de gestion financiera familiar",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "nodemon  ./src/main.ts",
+    "dev": "node --loader ts-node/esm src/main.ts",
+    "dev:watch": "nodemon --exec node --loader ts-node/esm src/main.ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["Nodejs", "22", "mongodb", "typescript", "hexagonal"],
+  "author": "Guillermo Calvache, Mateo Vasquez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.21.2",
+    "mongoose": "8.10.0",
+    "cors": "2.8.5",
+    "validator": "13.12.0",
+    "multer": "1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "ts-node": "10.9.2",
+    "nodemon": "3.1.9",
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.0",
+    "@types/cors": "^2.8.0",
+    "@types/multer": "^1.4.5",
+    "@types/validator": "^13.0.0"
+  }
+}
