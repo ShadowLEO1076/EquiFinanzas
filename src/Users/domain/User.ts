@@ -10,5 +10,5 @@ export class User {
         this.email = email;
         this.createdAt = createdAt;
     }
-
+    
 }
