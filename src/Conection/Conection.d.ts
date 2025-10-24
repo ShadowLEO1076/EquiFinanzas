@@ -1,2 +1,2 @@
-export declare function connectDB(): void;
+export declare function connectDB(): Promise<void>;
 //# sourceMappingURL=Conection.d.ts.map

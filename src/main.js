@@ -1,12 +1,13 @@
-import express from 'express';
+import express from "express";
 import cors from 'cors';
-import mongoose from 'mongoose';
 import { connectDB } from './Conection/Conection.js';
+import UserRoutes from './infraestructure/Users/UserRoutes.js';
 const app = express();
 const PORT = process.env.PORT || 3001;
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use('/users', UserRoutes);
 // Ruta de salud
 app.get('/health', (req, res) => {
     res.json({
@@ -15,8 +16,6 @@ app.get('/health', (req, res) => {
         timestamp: new Date().toISOString()
     });
 });
-// Conexión a MongoDB
-connectDB();
 /*
 const connectDB = async () => {
   try {
@@ -28,12 +27,10 @@ const connectDB = async () => {
   }
 };*/
 // Iniciar servidor
-const startServer = async () => {
-    await connectDB();
+connectDB().then(() => {
     app.listen(PORT, () => {
-        console.log(`🚀 Servidor ejecutándose en http://localhost:${PORT}`);
-        console.log(`📊 Health check: http://localhost:${PORT}/health`);
+        console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+        console.log(`Health check: http://localhost:${PORT}/health`);
     });
-};
-startServer().catch(console.error);
+});
 //# sourceMappingURL=main.js.map
