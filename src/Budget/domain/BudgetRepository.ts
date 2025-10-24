@@ -1,4 +1,4 @@
-import type { Budget } from "./budget.js";
+import { Budget } from "./Budget.js";
 
 export interface BudgetRepository {
     // Define los métodos que el repositorio de presupuestos debe implementar
