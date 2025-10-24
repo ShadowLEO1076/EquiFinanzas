@@ -4,7 +4,7 @@ import { UserUseCaseSave } from '../../application/Users/UserUseCaseSave.js';
 export class UserController {
 
     //irá creciendo con cada nuevo caso de uso
-    constructor(private saveUser: UserUseCaseSave) {}
+    constructor(private saveUser: UserUseCaseSave ) {}
 
     //método crear
     create = async (req: Request, res: Response) => { 

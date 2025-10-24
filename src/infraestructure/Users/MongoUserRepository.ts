@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
 //creamos un modelo, según la documentación de Mongo, un modelo compila un esquema
 //el primer parámetro busca en la base de datos, el segundo se encarga debe de asegurar
 //la integridad del archivo
-const userModel = mongoose.model('User', userSchema,);
+const userModel = mongoose.model('User', userSchema,'Users');
 
 export class MongoUserRepository implements IUserRepository{
 
